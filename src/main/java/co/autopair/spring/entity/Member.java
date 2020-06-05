@@ -1,0 +1,44 @@
+package co.autopair.spring.entity;
+
+import lombok.Data;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
+@Data
+@Entity(name = "members")
+public class Member {
+
+    @Id
+    private Integer id;
+
+    @NotNull
+    private String nickName;
+
+    @NotNull
+    private String firstName;
+
+    @NotNull
+    private String lastName;
+
+    @NotNull
+    private String position;
+
+    @OneToOne(cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "leader_id", referencedColumnName = "id")
+    private Member leader;
+
+    @NotNull
+    @OneToOne(cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "team_id", referencedColumnName = "id")
+    private Team team;
+
+    @NotNull
+    @OneToOne(cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private Address address;
+
+    public Integer getId() {
+        return id;
+    }
+}

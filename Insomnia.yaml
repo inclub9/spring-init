@@ -1,0 +1,371 @@
+_type: export
+__export_format: 4
+__export_date: 2020-06-03T08:33:47.821Z
+__export_source: insomnia.desktop.app:v7.1.1
+resources:
+  - _id: req_b2e0b81892164d0686e6a50345cab8a8
+    authentication: {}
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id": "2",
+        	"nickName": "test-name-put",
+        	"position": "test-position-put",
+        	"leader": {
+        		"id": 1
+        	},
+        	"team": {
+        		"id": 1
+        	}
+        }
+    created: 1591066890117
+    description: ""
+    headers:
+      - id: pair_e9270f3ace934ba784f61bf42c91e43d
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1591118905858
+    method: PUT
+    modified: 1591172363116
+    name: putMember
+    parameters: []
+    parentId: fld_15c2de75be9d400cbd77b674e834b3b3
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: 127.0.0.1:8080/autopair/api/v1/Members
+    _type: request
+  - _id: fld_15c2de75be9d400cbd77b674e834b3b3
+    created: 1591163531446
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1591163531446
+    modified: 1591163531446
+    name: member
+    parentId: wrk_235fbcfb6b804436825c2248e6176afe
+    _type: request_group
+  - _id: wrk_235fbcfb6b804436825c2248e6176afe
+    created: 1591066866735
+    description: ""
+    modified: 1591066866735
+    name: Insomnia
+    parentId: null
+    _type: workspace
+  - _id: req_f80183a64e754392bb1013977099e7b0
+    authentication: {}
+    body: {}
+    created: 1591074236857
+    description: ""
+    headers: []
+    isPrivate: false
+    metaSortKey: -1591118905883
+    method: GET
+    modified: 1591172247294
+    name: getOneMember
+    parameters: []
+    parentId: fld_15c2de75be9d400cbd77b674e834b3b3
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: 127.0.0.1:8080/autopair/api/v1/Members/2
+    _type: request
+  - _id: req_44dfc16f8e2f4b08b8e35f990568d5a7
+    authentication: {}
+    body:
+      mimeType: application/json
+      text: |-
+        	{
+        		"id": 5,
+        		"nickName": "test-3",
+        		"position": "dev-3",
+        		"leader": {
+        			"id": 1
+        		},
+        		"team": {
+        			"id": 2
+        		}
+        	}
+    created: 1591074280120
+    description: ""
+    headers:
+      - id: pair_9c3af0b66e764a6e927c2a80e80a3f91
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1591118905851.75
+    method: POST
+    modified: 1591172974353
+    name: postMember
+    parameters: []
+    parentId: fld_15c2de75be9d400cbd77b674e834b3b3
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: 127.0.0.1:8080/autopair/api/v1/Members
+    _type: request
+  - _id: req_4c3bfdb6f6994931a55c118336180394
+    authentication: {}
+    body:
+      mimeType: application/json
+      text: ""
+    created: 1591074341224
+    description: ""
+    headers:
+      - id: pair_9c3af0b66e764a6e927c2a80e80a3f91
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1591118905845.5
+    method: DELETE
+    modified: 1591172421222
+    name: deleteMember
+    parameters: []
+    parentId: fld_15c2de75be9d400cbd77b674e834b3b3
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: 127.0.0.1:8080/autopair/api/v1/Members/5
+    _type: request
+  - _id: req_8f22895fc19f4ba3be4d8cfd6f1547c5
+    authentication: {}
+    body:
+      mimeType: application/json
+      text: ""
+    created: 1591074423809
+    description: ""
+    headers:
+      - id: pair_9c3af0b66e764a6e927c2a80e80a3f91
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1591118905839.25
+    method: PATCH
+    modified: 1591170047093
+    name: patchMember
+    parameters: []
+    parentId: fld_15c2de75be9d400cbd77b674e834b3b3
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: 127.0.0.1:8080/autopair/api/v1/Members/2/position/testName
+    _type: request
+  - _id: req_16aefd3ff7c1491393e35824d576fc4a
+    authentication: {}
+    body: {}
+    created: 1591076568554
+    description: ""
+    headers: []
+    isPrivate: false
+    metaSortKey: -1591118905933
+    method: GET
+    modified: 1591167701198
+    name: getAllMember
+    parameters: []
+    parentId: fld_15c2de75be9d400cbd77b674e834b3b3
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: 127.0.0.1:8080/autopair/api/v1/Members
+    _type: request
+  - _id: req_0d26a6052ce642edbaaf16eb667ef932
+    authentication: {}
+    body: {}
+    created: 1591160538453
+    description: ""
+    headers: []
+    isPrivate: false
+    metaSortKey: -1591074280495
+    method: GET
+    modified: 1591173061590
+    name: getAllTeam
+    parameters: []
+    parentId: fld_ac8c1f1b594a483e97f62d96a92db268
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: 127.0.0.1:8080/autopair/api/v1/Teams
+    _type: request
+  - _id: fld_ac8c1f1b594a483e97f62d96a92db268
+    created: 1591168109685
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1591168109685
+    modified: 1591168109685
+    name: team
+    parentId: wrk_235fbcfb6b804436825c2248e6176afe
+    _type: request_group
+  - _id: req_0381fd7028dd4c11bf0c8ebc18fd8838
+    authentication: {}
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "team-G"
+        }
+    created: 1591161374933
+    description: ""
+    headers:
+      - id: pair_9c3af0b66e764a6e927c2a80e80a3f91
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1591074280420
+    method: POST
+    modified: 1591173177278
+    name: postTeam
+    parameters: []
+    parentId: fld_ac8c1f1b594a483e97f62d96a92db268
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: 127.0.0.1:8080/autopair/api/v1/Teams
+    _type: request
+  - _id: req_e8c44d8a467b400096217fbeec367504
+    authentication: {}
+    body: {}
+    created: 1591161566692
+    description: ""
+    headers: []
+    isPrivate: false
+    metaSortKey: -1591074280470
+    method: GET
+    modified: 1591173063925
+    name: getOneTeam
+    parameters: []
+    parentId: fld_ac8c1f1b594a483e97f62d96a92db268
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: 127.0.0.1:8080/autopair/api/v1/Teams/2
+    _type: request
+  - _id: req_d4663efe5e6c49ab8252e6b28b3e9f9a
+    authentication: {}
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id": "2",
+        	"name": "test-name-put"
+        }
+    created: 1591164355333
+    description: ""
+    headers:
+      - id: pair_e9270f3ace934ba784f61bf42c91e43d
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1591074280457.5
+    method: PUT
+    modified: 1591173106504
+    name: putTeam
+    parameters: []
+    parentId: fld_ac8c1f1b594a483e97f62d96a92db268
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: 127.0.0.1:8080/autopair/api/v1/Teams
+    _type: request
+  - _id: req_433fd42a6b534335b4f1e9451300b2c4
+    authentication: {}
+    body:
+      mimeType: application/json
+      text: ""
+    created: 1591164534501
+    description: ""
+    headers:
+      - id: pair_9c3af0b66e764a6e927c2a80e80a3f91
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1591074280395
+    method: DELETE
+    modified: 1591173147323
+    name: deleteTeam
+    parameters: []
+    parentId: fld_ac8c1f1b594a483e97f62d96a92db268
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: 127.0.0.1:8080/autopair/api/v1/Teams/3
+    _type: request
+  - _id: req_7c924dcb56d74fdfb0bbb8d65394a0d3
+    authentication: {}
+    body:
+      mimeType: application/json
+      text: ""
+    created: 1591164578183
+    description: ""
+    headers:
+      - id: pair_9c3af0b66e764a6e927c2a80e80a3f91
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1591074280445
+    method: PATCH
+    modified: 1591169938319
+    name: patchTeam
+    parameters: []
+    parentId: fld_ac8c1f1b594a483e97f62d96a92db268
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: 127.0.0.1:8080/autopair/api/v1/Teams/1/name/test-name-path
+    _type: request
+  - _id: env_d68b6b6568d9957aeee908cb1d5f83914450417e
+    color: null
+    created: 1591066866816
+    data: {}
+    dataPropertyOrder: null
+    isPrivate: false
+    metaSortKey: 1591066866816
+    modified: 1591066866816
+    name: Base Environment
+    parentId: wrk_235fbcfb6b804436825c2248e6176afe
+    _type: environment
+  - _id: jar_d68b6b6568d9957aeee908cb1d5f83914450417e
+    cookies: []
+    created: 1591066866821
+    modified: 1591066866821
+    name: Default Jar
+    parentId: wrk_235fbcfb6b804436825c2248e6176afe
+    _type: cookie_jar

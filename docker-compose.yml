@@ -1,0 +1,26 @@
+version: '2.0'
+
+services:
+
+  mysql:
+    image: mysql
+    container_name: mysql
+    hostname: mysql
+    domainname: dev.test
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: "test-db"
+      MYSQL_ROOT_PASSWORD: "root"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    hostname: phpmyadmin
+    domainname: dev.test
+    ports:
+      - "8888:80"
+    depends_on:
+      - mysql
+    links:
+      - mysql:db
