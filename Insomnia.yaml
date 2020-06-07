@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2020-06-03T08:33:47.821Z
+__export_date: 2020-06-07T02:18:33.368Z
 __export_source: insomnia.desktop.app:v7.1.1
 resources:
   - _id: req_b2e0b81892164d0686e6a50345cab8a8
@@ -187,6 +187,27 @@ resources:
     settingSendCookies: true
     settingStoreCookies: true
     url: 127.0.0.1:8080/autopair/api/v1/Members
+    _type: request
+  - _id: req_7cff3c363d264a23b327285a0921448b
+    authentication: {}
+    body: {}
+    created: 1591363508192
+    description: ""
+    headers: []
+    isPrivate: false
+    metaSortKey: -1591118905908
+    method: GET
+    modified: 1591496165942
+    name: getAllMemberByDistrict
+    parameters: []
+    parentId: fld_15c2de75be9d400cbd77b674e834b3b3
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: 127.0.0.1:8080/autopair/api/v1/Members/district/เขตมีนบุรี
     _type: request
   - _id: req_0d26a6052ce642edbaaf16eb667ef932
     authentication: {}

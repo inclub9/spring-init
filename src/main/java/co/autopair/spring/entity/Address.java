@@ -20,6 +20,9 @@ public class Address {
     private String district;
 
     @NotNull
+    private String subDistrict;
+
+    @NotNull
     private String postalCode;
 
     private String other;
