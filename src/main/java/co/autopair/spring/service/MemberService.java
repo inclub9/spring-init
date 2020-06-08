@@ -7,7 +7,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 @Value
 @Service
@@ -39,5 +41,9 @@ public class MemberService {
 
     public void delete(Integer id) {
         MemberRepository.deleteById(id);
+    }
+
+    public Optional<Collection<Member>> findAllByAddressDistrict(String district){
+        return MemberRepository.findAllByAddress_District(district);
     }
 }

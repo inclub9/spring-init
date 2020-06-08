@@ -16,7 +16,6 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class MemberController extends CommonController {
     private final MemberService service;
-    private final MemberRepository memberRepository;
 
     @GetMapping("/Members")
     public List<Member> Members() {
@@ -29,8 +28,8 @@ public class MemberController extends CommonController {
     }
 
     @GetMapping("/Members/district/{district}")
-    public Optional<Collection<Member>> member(@PathVariable String district) {  //automatic type conversion
-        return memberRepository.findAllByAddress_District(district);
+    public Optional<Collection<Member>> member(@PathVariable String district) {
+        return service.findAllByAddressDistrict(district);
     }
 
     @PostMapping("/Members")
