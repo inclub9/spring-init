@@ -1,0 +1,10 @@
+type Member {
+    id: ID!
+    nickName: String!
+    firstName: String!
+    lastName: String!
+    position: String!
+    leader: Member
+    team: Team!
+    address: Address!
+}

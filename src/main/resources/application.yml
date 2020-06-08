@@ -25,3 +25,6 @@ spring:
       hibernate.format_sql: true
       hibernate.generate_statistics: true
     open-in-view: false
+graphql:
+  servlet:
+    mapping: /apis/graphql
