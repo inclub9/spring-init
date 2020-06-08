@@ -10,6 +10,8 @@ server:
 
 spring:
   datasource:
+    data: classpath:/data.sql
+    initialization-mode: always
     url: jdbc:mysql://localhost:3306/test-db?createDatabaseIfNotExist=true
     username: root
     password: 'root'
