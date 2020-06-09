@@ -9,9 +9,12 @@ public class MainSeeder implements CommandLineRunner {
 
     @Autowired
     TeamSeeder teamSeeder;
+    AddressSeeder addressSeeder;
 
     @Override
     public void run(String... args) throws Exception {
         teamSeeder.run();
+//        addressSeeder.run();
+
     }
 }
