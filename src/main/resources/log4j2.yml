@@ -53,14 +53,14 @@ Configutation:
     AsyncLogger:
     - name: co.autopair.spring
       additivity: false
-      level: info
+      level: warn
       includeLocation: false
       AppenderRef:
       - ref: Console_Appender
       - ref: RollingRandomAccessFile_Appender
 
     - name: org.hibernate.engine.internal.StatisticalLoggingSessionEventListener
-      level: info
+      level: warn
       additivity: false
       AppenderRef:
       - ref: Console_Appender

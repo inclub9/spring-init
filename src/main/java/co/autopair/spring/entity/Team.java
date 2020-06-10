@@ -9,11 +9,6 @@ import javax.validation.constraints.NotNull;
 @Entity(name = "teams")
 @SequenceGenerator(name = "teams_seq")
 public class Team {
-
-    public Team(@NotNull String name) {
-        this.name = name;
-    }
-
     @Id
     @GeneratedValue(generator = "teams_seq")
     private Integer id;
