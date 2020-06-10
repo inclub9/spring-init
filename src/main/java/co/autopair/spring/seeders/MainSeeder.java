@@ -8,11 +8,10 @@ import org.springframework.stereotype.Component;
 public class MainSeeder implements CommandLineRunner {
 
     @Autowired
-    TeamSeeder teamSeeder;
+    MasterDataSeeder masterDataSeeder;
 
     @Override
     public void run(String... args) throws Exception {
-        teamSeeder.run();
-
+        masterDataSeeder.run();
     }
 }

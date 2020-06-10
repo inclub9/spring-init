@@ -7,10 +7,22 @@ import javax.validation.constraints.NotNull;
 
 @Data
 @Entity(name = "addresses")
+@SequenceGenerator(name = "addresses_seq")
 public class Address {
+    public Address(@NotNull String province, @NotNull String district, @NotNull String subDistrict, @NotNull String postalCode, String other) {
+        this.province = province;
+        this.district = district;
+        this.subDistrict = subDistrict;
+        this.postalCode = postalCode;
+        this.other = other;
+    }
 
+    public Address() {
+
+    }
 
     @Id
+    @GeneratedValue(generator = "addresses_seq")
     private Integer id;
 
     @NotNull
