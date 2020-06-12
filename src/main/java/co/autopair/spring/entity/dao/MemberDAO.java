@@ -7,20 +7,18 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.transaction.annotation.Transactional;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-//@Transactional
 public class MemberDAO {
     Integer id;
     String nickName;
     String firstName;
     String lastName;
     String position;
-    Member leader;
+    Member leader = null;
     Team team;
     Address address;
 }

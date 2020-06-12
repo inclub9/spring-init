@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -48,16 +49,20 @@ public class MemberService {
         return MemberRepository.findAllByAddress_District(district);
     }
 
-    public void saveDAO(MemberDAO memberDAO) {
-        Member member = new Member();
-        member.setId(memberDAO.getId());
-        member.setNickName(memberDAO.getNickName());
-        member.setFirstName(memberDAO.getFirstName());
-        member.setLastName(memberDAO.getLastName());
-        member.setLeader(memberDAO.getLeader());
-        member.setTeam(memberDAO.getTeam());
-        member.setAddress(memberDAO.getAddress());
-        member.setPosition(memberDAO.getPosition());
-        MemberRepository.save(member);
+    public void saveAllDAO(List<MemberDAO> memberDAO) {
+        List<Member> memberList = new ArrayList<>();
+        for (MemberDAO item : memberDAO) {
+            Member member = new Member();
+            member.setId(item.getId());
+            member.setNickName(item.getNickName());
+            member.setFirstName(item.getFirstName());
+            member.setLastName(item.getLastName());
+            member.setLeader(item.getLeader());
+            member.setTeam(item.getTeam());
+            member.setAddress(item.getAddress());
+            member.setPosition(item.getPosition());
+            memberList.add(member);
+        }
+        MemberRepository.saveAll(memberList);
     }
 }
