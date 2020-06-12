@@ -2,6 +2,7 @@ package co.autopair.spring.service;
 
 
 import co.autopair.spring.entity.Member;
+import co.autopair.spring.entity.dao.MemberDAO;
 import co.autopair.spring.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
@@ -43,7 +44,20 @@ public class MemberService {
         MemberRepository.deleteById(id);
     }
 
-    public Optional<Collection<Member>> findAllByAddressDistrict(String district){
+    public Optional<Collection<Member>> findAllByAddressDistrict(String district) {
         return MemberRepository.findAllByAddress_District(district);
+    }
+
+    public void saveDAO(MemberDAO memberDAO) {
+        Member member = new Member();
+        member.setId(memberDAO.getId());
+        member.setNickName(memberDAO.getNickName());
+        member.setFirstName(memberDAO.getFirstName());
+        member.setLastName(memberDAO.getLastName());
+        member.setLeader(memberDAO.getLeader());
+        member.setTeam(memberDAO.getTeam());
+        member.setAddress(memberDAO.getAddress());
+        member.setPosition(memberDAO.getPosition());
+        MemberRepository.save(member);
     }
 }
