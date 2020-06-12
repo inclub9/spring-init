@@ -2,7 +2,10 @@ package co.autopair.spring.entity;
 
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
 
 @Data

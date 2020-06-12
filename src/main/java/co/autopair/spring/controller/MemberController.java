@@ -1,7 +1,6 @@
 package co.autopair.spring.controller;
 
 import co.autopair.spring.entity.Member;
-import co.autopair.spring.repository.MemberRepository;
 import co.autopair.spring.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
