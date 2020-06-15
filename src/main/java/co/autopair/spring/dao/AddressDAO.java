@@ -1,4 +1,4 @@
-package co.autopair.spring.entity.dao;
+package co.autopair.spring.dao;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class TeamDAO {
+public class AddressDAO {
     Integer id;
-    String name;
+    String province;
+    String district;
+    String subDistrict;
+    String postalCode;
+    String other;
 }

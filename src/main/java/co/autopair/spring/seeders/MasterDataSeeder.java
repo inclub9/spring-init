@@ -2,9 +2,9 @@ package co.autopair.spring.seeders;
 
 import co.autopair.spring.entity.Address;
 import co.autopair.spring.entity.Team;
-import co.autopair.spring.entity.dao.AddressDAO;
-import co.autopair.spring.entity.dao.MemberDAO;
-import co.autopair.spring.entity.dao.TeamDAO;
+import co.autopair.spring.dao.AddressDAO;
+import co.autopair.spring.dao.MemberDAO;
+import co.autopair.spring.dao.TeamDAO;
 import co.autopair.spring.repository.AddressRepository;
 import co.autopair.spring.repository.MemberRepository;
 import co.autopair.spring.repository.TeamRepository;
@@ -34,9 +34,9 @@ public class MasterDataSeeder {
     AddressService addressService;
 
     public void run() throws IOException {
-        List<Team> teamListReturnSave = teamSeeder();
-        List<Address> addressListReturnSave = addressSeeder();
-        memberSeeder(teamListReturnSave,addressListReturnSave);
+        List<Team> resultSaveFromTeam = teamSeeder();
+        List<Address> resultSaveFromAddress = addressSeeder();
+        memberSeeder (resultSaveFromTeam,resultSaveFromAddress);
     }
 
     private List<Address> addressSeeder() throws IOException {
@@ -70,10 +70,10 @@ public class MasterDataSeeder {
                     .build();
             teamDAOList.add(teamDAO);
         }
-       return teamService.saveAllDAO(teamDAOList);
+       return teamService.saveAll(teamDAOList);
     }
 
-    private void memberSeeder(List<Team> teamListReturnSave, List<Address> addressListReturnSave) {
+    private void memberSeeder(List<Team> resultSaveFromTeam, List<Address> resultSaveFromAddress) {
         String[] name = {"Honda", "Nan", "Dto", "Benz", "Nid", "Yok", "Ice", "Hut", "Tao", "Inn", "Pure", "Da", "Gib", "Wut", "Nisa", "Kritsana", "Panu", "Kaew", "Dun", "Nong"};
         String[] position = {"CEO", "CMO", "CTO", "Operation Manager", "Admin", "Account Manager", "Accountant", "Admin", "Senior Front End Developer", "Back End Developer", "Front End Developer", "Front End Developer", "Tester", "Data Analyst", "Customer Support", "Customer Support", "Customer Support", "Customer Support", "Product Specialist", "Product Specialist"};
         List<MemberDAO> memberDAOList = new ArrayList<>();
@@ -89,7 +89,7 @@ public class MasterDataSeeder {
                     .build();
             memberDAOList.add(memberDAO);
         }
-        memberService.saveAllDAO(memberDAOList);
+        memberService.saveAll(memberDAOList);
     }
 
 }

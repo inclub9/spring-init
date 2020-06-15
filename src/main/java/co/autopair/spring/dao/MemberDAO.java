@@ -1,4 +1,4 @@
-package co.autopair.spring.entity.dao;
+package co.autopair.spring.dao;
 
 import co.autopair.spring.entity.Address;
 import co.autopair.spring.entity.Member;

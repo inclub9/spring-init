@@ -2,7 +2,7 @@ package co.autopair.spring.service;
 
 
 import co.autopair.spring.entity.Address;
-import co.autopair.spring.entity.dao.AddressDAO;
+import co.autopair.spring.dao.AddressDAO;
 import co.autopair.spring.repository.AddressRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;

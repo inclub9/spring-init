@@ -2,7 +2,7 @@ package co.autopair.spring.service;
 
 
 import co.autopair.spring.entity.Team;
-import co.autopair.spring.entity.dao.TeamDAO;
+import co.autopair.spring.dao.TeamDAO;
 import co.autopair.spring.repository.TeamRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
@@ -43,7 +43,7 @@ public class TeamService {
         TeamRepository.deleteById(id);
     }
 
-    public List<Team> saveAllDAO(List<TeamDAO> teamDAOList) {
+    public List<Team> saveAll(List<TeamDAO> teamDAOList) {
         List<Team> teamList = new ArrayList<>();
         for (TeamDAO item : teamDAOList) {
             Team team = new Team();
