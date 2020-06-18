@@ -12,6 +12,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @ToString
 @Entity(name = "members")
+@Builder
 public class Member {
 
     @Id
