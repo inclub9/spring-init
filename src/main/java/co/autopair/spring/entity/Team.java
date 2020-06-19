@@ -1,6 +1,7 @@
 package co.autopair.spring.entity;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
 
-@Builder
+@SuperBuilder
 @Data
 @Getter
 @Setter

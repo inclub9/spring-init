@@ -1,6 +1,7 @@
 package co.autopair.spring.entity;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -12,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @ToString
 @Entity(name = "members")
-@Builder
+@SuperBuilder
 public class Member {
 
     @Id

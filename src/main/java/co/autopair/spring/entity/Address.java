@@ -1,6 +1,7 @@
 package co.autopair.spring.entity;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,6 +16,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @Entity(name = "addresses")
 @SequenceGenerator(name = "addresses_seq")
+@SuperBuilder
 public class Address {
     @Id
     @GeneratedValue(generator = "addresses_seq")
