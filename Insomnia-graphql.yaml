@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2020-06-22T06:14:58.588Z
+__export_date: 2020-06-22T11:43:33.852Z
 __export_source: insomnia.desktop.app:v2020.2.2
 resources:
   - _id: req_2e239024fb074e269a3107160c062245
@@ -17,7 +17,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592364322035
     method: POST
-    modified: 1592806413530
+    modified: 1592811350601
     name: allTeams
     parameters: []
     parentId: fld_9ca6a5f5f842422283b4371c23a466f3
@@ -62,7 +62,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592364321985
     method: POST
-    modified: 1592804778114
+    modified: 1592811365196
     name: createTeam
     parameters: []
     parentId: fld_9ca6a5f5f842422283b4371c23a466f3
@@ -88,7 +88,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592364322010
     method: POST
-    modified: 1592806417227
+    modified: 1592811354614
     name: teamById
     parameters: []
     parentId: fld_9ca6a5f5f842422283b4371c23a466f3
@@ -114,7 +114,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592364321935
     method: POST
-    modified: 1592801890617
+    modified: 1592811369245
     name: updateName
     parameters: []
     parentId: fld_9ca6a5f5f842422283b4371c23a466f3
@@ -140,7 +140,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592364321885
     method: POST
-    modified: 1592801140716
+    modified: 1592811372929
     name: deleteTeam
     parameters: []
     parentId: fld_9ca6a5f5f842422283b4371c23a466f3
@@ -166,7 +166,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592801909319
     method: POST
-    modified: 1592806400984
+    modified: 1592811408682
     name: allAddresses
     parameters: []
     parentId: fld_e96f55a27bd7482a9cfad645d9c33689
@@ -202,7 +202,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592583115677
     method: POST
-    modified: 1592806404214
+    modified: 1592811412032
     name: addressById
     parameters: []
     parentId: fld_e96f55a27bd7482a9cfad645d9c33689
@@ -273,7 +273,7 @@ resources:
     authentication: {}
     body:
       mimeType: application/graphql
-      text: '{"query":"{\n  allMembers{\n    id\n  }\n}"}'
+      text: '{"query":"{\n  allMembers{\n    id\n    nickName\n    address{\n      district\n    }\n    team{\n      name\n    }\n  }\n}"}'
     created: 1592805371522
     description: ""
     headers:
@@ -283,7 +283,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592805371522
     method: POST
-    modified: 1592806391435
+    modified: 1592822906919
     name: allMembers
     parameters: []
     parentId: fld_cfd69bbf9faf40baac3b3b5039774c6c
@@ -335,9 +335,11 @@ resources:
     authentication: {}
     body:
       mimeType: application/graphql
-      text: '{"query":"mutation {\n  createMember(id: 99, nickName: \"aaa\",
-        firstName: \"aaa\", lastName: \"aaaa\", position: \"aaaa\", leader: 1,
-        team: 1, address: 1) {\n    nickName\n  }\n}\n"}'
+      text: '{"query":"mutation {\n  createMember(\n    member: {id: 99, nickName:
+        \"aaa\", firstName: \"aaa\", lastName: \"aaa\", position:
+        \"aaa\"},\n    team: {name: \"test\"},\n    address: {province: \"aa\",
+        district: \"aa\", subDistrict: \"aa\", postalCode: \"aa\"}\n  )
+        {\n    nickName\n  }\n}\n"}'
     created: 1592806053892
     description: ""
     headers:
@@ -347,7 +349,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592804505971.25
     method: POST
-    modified: 1592806394572
+    modified: 1592826190410
     name: createMembers
     parameters: []
     parentId: fld_cfd69bbf9faf40baac3b3b5039774c6c

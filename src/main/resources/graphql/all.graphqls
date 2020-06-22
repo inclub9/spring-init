@@ -34,10 +34,30 @@ type Query {
     member(id: ID!): Member
 }
 
+input MemberInput{
+    id: ID!
+    nickName: String!
+    firstName: String!
+    lastName: String!
+    position: String!
+}
+
+input AddressInput{
+    province: String!,
+    district: String!,
+    subDistrict: String!,
+    postalCode: String!,
+    other: String,
+}
+
+input TeamInput{
+    name: String!
+}
+
 type Mutation {
-    createTeam(name: String): Team!
-    deleteTeam(id: ID): [Team]
-    updateTeamName(id: ID,name: String): Int!
+    createTeam(name: String!): Team!
+    deleteTeam(id: ID!): [Team]
+    updateTeamName(id: ID!,name: String!): Int!
 
     createAddress(
         province: String!,
@@ -49,13 +69,9 @@ type Mutation {
     updateAddressDistrict(id: ID, district: String): Int!
 
     createMember(
-        id: ID!
-        nickName: String!
-        firstName: String!
-        lastName: String!
-        position: String!
-        leader: ID
-        team: ID!
-        address: ID!
+        member: MemberInput!
+        leader: MemberInput
+        team: TeamInput!
+        address: AddressInput!
     ): Member!
 }

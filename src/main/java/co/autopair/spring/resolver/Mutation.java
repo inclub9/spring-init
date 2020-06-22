@@ -8,6 +8,7 @@ import co.autopair.spring.repository.MemberRepository;
 import co.autopair.spring.repository.TeamRepository;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -65,26 +66,18 @@ public class Mutation implements GraphQLMutationResolver {
 
     //member
     public Member createMember(
-            Integer id,
-            String nickName,
-            String firstName,
-            String lastName,
-            String position,
-            Integer leader,
-            Integer team,
-            Integer address
+            Member member,
+            Member leader,
+            Team team,
+            Address address
     ) {
+        member.setTeam(teamRepository.save(team));
+        member.setAddress(addressRepository.save(address));
+        if (leader != null) {
+            member.setLeader(memberRepository.save(leader));
+        }
         return memberRepository.save(
-                Member.builder()
-                        .id(id)
-                        .nickName(nickName)
-                        .firstName(firstName)
-                        .lastName(lastName)
-                        .position(position)
-                        .leader(memberRepository.getOne(leader))
-                        .team(teamRepository.getOne(team))
-                        .address(addressRepository.getOne(address))
-                        .build()
+                member
         );
     }
 }
