@@ -40,6 +40,9 @@ input MemberInput{
     firstName: String!
     lastName: String!
     position: String!
+    leader: MemberInput
+    team: TeamInput!
+    address: AddressInput!
 }
 
 input AddressInput{
@@ -70,8 +73,5 @@ type Mutation {
 
     createMember(
         member: MemberInput!
-        leader: MemberInput
-        team: TeamInput!
-        address: AddressInput!
     ): Member!
 }

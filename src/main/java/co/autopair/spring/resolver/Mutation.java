@@ -65,15 +65,12 @@ public class Mutation implements GraphQLMutationResolver {
 
     //member
     public Member createMember(
-            Member member,
-            Member leader,
-            Team team,
-            Address address
+            Member member
     ) {
-        member.setTeam(teamRepository.save(team));
-        member.setAddress(addressRepository.save(address));
-        if (leader != null) {
-            member.setLeader(memberRepository.save(leader));
+        member.setTeam(teamRepository.save(member.getTeam()));
+        member.setAddress(addressRepository.save(member.getAddress()));
+        if (member.getLeader() != null) {
+            member.setLeader(memberRepository.save(member.getLeader()));
         }
         return memberRepository.save(
                 member
