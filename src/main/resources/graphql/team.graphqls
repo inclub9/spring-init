@@ -13,7 +13,7 @@ type Query {
 type Mutation {
     createTeam(name: String): Team!
     deleteTeam(id: ID): [Team]
-#    updateName(name: String): Team!
+    updateTeamName(id: ID,name: String): Int!
     #    updateLanguage(id: ID!, name: String, code: String, color: String, languageType: String): Language!
     #    deleteLanguage(id: ID!): Boolean
 }

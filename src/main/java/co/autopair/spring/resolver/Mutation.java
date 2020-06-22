@@ -20,10 +20,9 @@ public class Mutation implements GraphQLMutationResolver {
         );
     }
 
-//    public Team updateTeamName(String name) {
-//        teamRepository.updateName(1, name);
-//        return teamRepository.getOne(1);
-//    }
+    public int updateTeamName(Integer id, String name) {
+        return teamRepository.updateName(id, name);
+    }
 
     public List<Team> deleteTeam(Integer id) {
         teamRepository.deleteById(id);
