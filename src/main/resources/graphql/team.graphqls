@@ -27,7 +27,12 @@ type Mutation {
     deleteTeam(id: ID): [Team]
     updateTeamName(id: ID,name: String): Int!
 
-#    createAddress(name: String): Address!
-#    deleteAddress(id: ID): [Address]
-#    updateAddressName(id: ID,name: String): Int!
+    createAddress(
+        province: String!,
+        district: String!,
+        subDistrict: String!,
+        postalCode: String!,
+        other: String,
+    ): Address!
+    updateAddressDistrict(id: ID, district: String): Int!
 }

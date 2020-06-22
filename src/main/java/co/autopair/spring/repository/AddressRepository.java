@@ -12,6 +12,6 @@ import javax.transaction.Transactional;
 @Transactional
 public interface AddressRepository extends CommonRepository<Address, Integer> {
     @Modifying
-    @Query(value = "UPDATE Addresses SET district = :district WHERE id = :id", nativeQuery = true)
+    @Query(value = "UPDATE addresses SET district = :district WHERE id = :id", nativeQuery = true)
     int updateDistrict(@Param("id") Integer id, @Param("district") String district);
 }

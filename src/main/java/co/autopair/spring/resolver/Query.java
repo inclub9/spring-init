@@ -22,8 +22,8 @@ public class Query implements GraphQLQueryResolver {
     @Autowired
     private AddressRepository addressRepository;
 
-    @Autowired
-    private MemberRepository memberRepository;
+//    @Autowired
+//    private MemberRepository memberRepository;
 
     //team
     public List<Team> allTeams() {

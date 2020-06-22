@@ -36,28 +36,27 @@ public class Mutation implements GraphQLMutationResolver {
     }
 
     //Address
-//    public Address createAddress(
-//            String province,
-//            String district,
-//            String subDistrict,
-//            String postalCode,
-//            String other,
-//            String build
-//    ) {
-//        return addressRepository.save(
-//                Address.builder()
-//                        .province(province)
-//                        .district(district)
-//                        .subDistrict(subDistrict)
-//                        .postalCode(postalCode)
-//                        .other(other)
-//                        .build()
-//        );
-//    }
+    public Address createAddress(
+            String province,
+            String district,
+            String subDistrict,
+            String postalCode,
+            String other
+    ) {
+        return addressRepository.save(
+                Address.builder()
+                        .province(province)
+                        .district(district)
+                        .subDistrict(subDistrict)
+                        .postalCode(postalCode)
+                        .other(other)
+                        .build()
+        );
+    }
 
-//    public int updateAddressDistrict(Integer id, String district) {
-//        return addressRepository.updateDistrict(id, district);
-//    }
+    public int updateAddressDistrict(Integer id, String district) {
+        return addressRepository.updateDistrict(id, district);
+    }
 //
 //    public List<Address> deleteAddress(Integer id) {
 //        addressRepository.deleteById(id);
