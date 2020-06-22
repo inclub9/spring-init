@@ -8,7 +8,6 @@ import co.autopair.spring.repository.MemberRepository;
 import co.autopair.spring.repository.TeamRepository;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
