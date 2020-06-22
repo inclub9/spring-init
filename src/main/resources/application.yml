@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8080
   compression:
     enabled: true
     min-response-size: 1KB
@@ -27,4 +27,4 @@ spring:
     open-in-view: false
 graphql:
   servlet:
-    mapping: /apis/graphql
+    mapping: /graphql

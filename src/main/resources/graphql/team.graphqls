@@ -3,7 +3,14 @@ type Team {
     name: String!
 }
 
-# Root
+# The Root Query for the application
 type Query {
-    findAllTeams: [Team]!
+    allTeams: [Team]
+}
+
+# The Root Mutation for the application
+type Mutation {
+    createTeam(name: String): Team!
+#    updateLanguage(id: ID!, name: String, code: String, color: String, languageType: String): Language!
+#    deleteLanguage(id: ID!): Boolean
 }
