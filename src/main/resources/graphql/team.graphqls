@@ -3,10 +3,22 @@ type Team {
     name: String!
 }
 
+type Address {
+    id: ID!
+    province: String!
+    district: String!
+    subDistrict: String!
+    postalCode: String!
+    other: String
+}
+
 # The Root Query for the application
 type Query {
-    allTeam: [Team]
+    allTeams: [Team]
     team(id: ID!): Team
+
+    allAddresses: [Address]
+    address(id: ID!): Address
 }
 
 # The Root Mutation for the application
@@ -14,6 +26,8 @@ type Mutation {
     createTeam(name: String): Team!
     deleteTeam(id: ID): [Team]
     updateTeamName(id: ID,name: String): Int!
-    #    updateLanguage(id: ID!, name: String, code: String, color: String, languageType: String): Language!
-    #    deleteLanguage(id: ID!): Boolean
+
+#    createAddress(name: String): Address!
+#    deleteAddress(id: ID): [Address]
+#    updateAddressName(id: ID,name: String): Int!
 }
