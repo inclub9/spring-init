@@ -12,7 +12,8 @@ type Query {
 # The Root Mutation for the application
 type Mutation {
     createTeam(name: String): Team!
-    updateName(name: String): Team!
+    deleteTeam(id: ID): [Team]
+#    updateName(name: String): Team!
     #    updateLanguage(id: ID!, name: String, code: String, color: String, languageType: String): Language!
     #    deleteLanguage(id: ID!): Boolean
 }

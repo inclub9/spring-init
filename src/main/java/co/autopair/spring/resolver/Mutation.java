@@ -6,6 +6,8 @@ import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class Mutation implements GraphQLMutationResolver {
 
@@ -18,12 +20,13 @@ public class Mutation implements GraphQLMutationResolver {
         );
     }
 
-    public Team updateName(String name) {
-        teamRepository.updateName(1, name);
-        return teamRepository.getOne(1);
-    }
-
-//    public void delete(Integer id) {
-//        teamRepository.deleteById(id);
+//    public Team updateTeamName(String name) {
+//        teamRepository.updateName(1, name);
+//        return teamRepository.getOne(1);
 //    }
+
+    public List<Team> deleteTeam(Integer id) {
+        teamRepository.deleteById(id);
+        return teamRepository.findAll();
+    }
 }
