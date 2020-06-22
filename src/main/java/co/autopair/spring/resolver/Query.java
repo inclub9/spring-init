@@ -22,8 +22,8 @@ public class Query implements GraphQLQueryResolver {
     @Autowired
     private AddressRepository addressRepository;
 
-//    @Autowired
-//    private MemberRepository memberRepository;
+    @Autowired
+    private MemberRepository memberRepository;
 
     //team
     public List<Team> allTeams() {
@@ -44,11 +44,11 @@ public class Query implements GraphQLQueryResolver {
     }
 
     //member
-//    public List<Member> allMembers(){
-//        return memberRepository.findAll();
-//    }
-//
-//    public Member member(Integer id) {
-//        return memberRepository.findById(id).orElseThrow(() -> new RuntimeException("data not found"));
-//    }
+    public List<Member> allMembers(){
+        return memberRepository.findAll();
+    }
+
+    public Member member(Integer id) {
+        return memberRepository.findById(id).orElseThrow(() -> new RuntimeException("data not found"));
+    }
 }

@@ -1,0 +1,387 @@
+_type: export
+__export_format: 4
+__export_date: 2020-06-22T06:14:58.588Z
+__export_source: insomnia.desktop.app:v2020.2.2
+resources:
+  - _id: req_2e239024fb074e269a3107160c062245
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  allTeams{\n    name\n  }\n}"}'
+    created: 1592364322035
+    description: ""
+    headers:
+      - id: pair_75b044c551a64c89bf4868b314e365c6
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1592364322035
+    method: POST
+    modified: 1592806413530
+    name: allTeams
+    parameters: []
+    parentId: fld_9ca6a5f5f842422283b4371c23a466f3
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: localhost:8080/autopair/graphql
+    _type: request
+  - _id: fld_9ca6a5f5f842422283b4371c23a466f3
+    created: 1592797943066
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1592797943066
+    modified: 1592797943066
+    name: team
+    parentId: wrk_09ceb922f8254b9991fff1afd2ab4e41
+    _type: request_group
+  - _id: wrk_09ceb922f8254b9991fff1afd2ab4e41
+    created: 1592364311610
+    description: ""
+    modified: 1592364311610
+    name: Insomnia
+    parentId: null
+    scope: null
+    _type: workspace
+  - _id: req_43222260fc8b45bb98948767a3a45c66
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n  createTeam(name: \"bezkoder\")
+        {\n    id\n    name\n  }\n}"}'
+    created: 1592797992092
+    description: ""
+    headers:
+      - id: pair_75b044c551a64c89bf4868b314e365c6
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1592364321985
+    method: POST
+    modified: 1592804778114
+    name: createTeam
+    parameters: []
+    parentId: fld_9ca6a5f5f842422283b4371c23a466f3
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: localhost:8080/autopair/graphql
+    _type: request
+  - _id: req_4bc4f52d321b42168916778c15d0af16
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  team(id: 2){\n    name\n  }\n}"}'
+    created: 1592799266338
+    description: ""
+    headers:
+      - id: pair_75b044c551a64c89bf4868b314e365c6
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1592364322010
+    method: POST
+    modified: 1592806417227
+    name: teamById
+    parameters: []
+    parentId: fld_9ca6a5f5f842422283b4371c23a466f3
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: localhost:8080/autopair/graphql
+    _type: request
+  - _id: req_d3724cbf9ac642daad847d2aead3caac
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n  updateTeamName(id: 1,name: \"bezkoder\")\n}"}'
+    created: 1592799434733
+    description: ""
+    headers:
+      - id: pair_75b044c551a64c89bf4868b314e365c6
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1592364321935
+    method: POST
+    modified: 1592801890617
+    name: updateName
+    parameters: []
+    parentId: fld_9ca6a5f5f842422283b4371c23a466f3
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: localhost:8080/autopair/graphql
+    _type: request
+  - _id: req_bf777b3a35f44d329fa84c258d75a655
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n  deleteTeam(id: 13){\n    id\n    name\n  }\n}"}'
+    created: 1592800918733
+    description: ""
+    headers:
+      - id: pair_75b044c551a64c89bf4868b314e365c6
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1592364321885
+    method: POST
+    modified: 1592801140716
+    name: deleteTeam
+    parameters: []
+    parentId: fld_9ca6a5f5f842422283b4371c23a466f3
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: localhost:8080/autopair/graphql
+    _type: request
+  - _id: req_00b9bbafab2b46429c15fd5a8c6e2105
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  allAddresses{\n    id district\n  }\n}"}'
+    created: 1592801909319
+    description: ""
+    headers:
+      - id: pair_7608c681c2714069837ceb739bce338f
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1592801909319
+    method: POST
+    modified: 1592806400984
+    name: allAddresses
+    parameters: []
+    parentId: fld_e96f55a27bd7482a9cfad645d9c33689
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: localhost:8080/autopair/graphql
+    _type: request
+  - _id: fld_e96f55a27bd7482a9cfad645d9c33689
+    created: 1592801897047
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1592801897047
+    modified: 1592801897047
+    name: address
+    parentId: wrk_09ceb922f8254b9991fff1afd2ab4e41
+    _type: request_group
+  - _id: req_80ca86b7c2764b34992ee468e1d6bb6e
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  address(id: 1){\n    id district\n  }\n}"}'
+    created: 1592803009077
+    description: ""
+    headers:
+      - id: pair_7608c681c2714069837ceb739bce338f
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1592583115677
+    method: POST
+    modified: 1592806404214
+    name: addressById
+    parameters: []
+    parentId: fld_e96f55a27bd7482a9cfad645d9c33689
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: localhost:8080/autopair/graphql
+    _type: request
+  - _id: req_819155aedefb4763a38a053572d3ea42
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n  createAddress(province: \"aa\", district:
+        \"aaa\", subDistrict: \"aaa\", postalCode: \"aaa\", other: \"aaa\")
+        {\n    id\n  }\n}\n"}'
+    created: 1592804674062
+    description: ""
+    headers:
+      - id: pair_7608c681c2714069837ceb739bce338f
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1592473718856
+    method: POST
+    modified: 1592806407453
+    name: createAddress
+    parameters: []
+    parentId: fld_e96f55a27bd7482a9cfad645d9c33689
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: localhost:8080/autopair/graphql
+    _type: request
+  - _id: req_02ab42fc64484ef3bccbb01595a0351f
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n  updateAddressDistrict(id: 1, district:
+        \"sssss\")\n}\n"}'
+    created: 1592804960345
+    description: ""
+    headers:
+      - id: pair_7608c681c2714069837ceb739bce338f
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1592419020445.5
+    method: POST
+    modified: 1592806410477
+    name: updateAddressDistrict
+    parameters: []
+    parentId: fld_e96f55a27bd7482a9cfad645d9c33689
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: localhost:8080/autopair/graphql
+    _type: request
+  - _id: req_c589d3af548e4f4dbad592b5f764113d
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  allMembers{\n    id\n  }\n}"}'
+    created: 1592805371522
+    description: ""
+    headers:
+      - id: pair_007341faf33846aab024264debb716f0
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1592805371522
+    method: POST
+    modified: 1592806391435
+    name: allMembers
+    parameters: []
+    parentId: fld_cfd69bbf9faf40baac3b3b5039774c6c
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: localhost:8080/autopair/graphql
+    _type: request
+  - _id: fld_cfd69bbf9faf40baac3b3b5039774c6c
+    created: 1592805361928
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1592805361928
+    modified: 1592805361928
+    name: member
+    parentId: wrk_09ceb922f8254b9991fff1afd2ab4e41
+    _type: request_group
+  - _id: req_512a7f80228540ba919f0c91738ea951
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  member(id:1){\n    id\n    nickName\n  }\n}"}'
+    created: 1592805407292
+    description: ""
+    headers:
+      - id: pair_007341faf33846aab024264debb716f0
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1592803640420.5
+    method: POST
+    modified: 1592806397838
+    name: member
+    parameters: []
+    parentId: fld_cfd69bbf9faf40baac3b3b5039774c6c
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: localhost:8080/autopair/graphql
+    _type: request
+  - _id: req_28929d004d89451b9040a520a4b6b84e
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n  createMember(id: 99, nickName: \"aaa\",
+        firstName: \"aaa\", lastName: \"aaaa\", position: \"aaaa\", leader: 1,
+        team: 1, address: 1) {\n    nickName\n  }\n}\n"}'
+    created: 1592806053892
+    description: ""
+    headers:
+      - id: pair_007341faf33846aab024264debb716f0
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1592804505971.25
+    method: POST
+    modified: 1592806394572
+    name: createMembers
+    parameters: []
+    parentId: fld_cfd69bbf9faf40baac3b3b5039774c6c
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: localhost:8080/autopair/graphql
+    _type: request
+  - _id: env_a84ddfa106762b66d8e49f17949a05ce9abedb22
+    color: null
+    created: 1592364311685
+    data: {}
+    dataPropertyOrder: null
+    isPrivate: false
+    metaSortKey: 1592364311685
+    modified: 1592364311685
+    name: Base Environment
+    parentId: wrk_09ceb922f8254b9991fff1afd2ab4e41
+    _type: environment
+  - _id: jar_a84ddfa106762b66d8e49f17949a05ce9abedb22
+    cookies: []
+    created: 1592364311689
+    modified: 1592364311689
+    name: Default Jar
+    parentId: wrk_09ceb922f8254b9991fff1afd2ab4e41
+    _type: cookie_jar
+  - _id: spc_837ac571cd6d44959e9b2cdabafa3ef7
+    contentType: yaml
+    contents: ""
+    created: 1592364311615
+    fileName: Insomnia
+    modified: 1592364311615
+    parentId: wrk_09ceb922f8254b9991fff1afd2ab4e41
+    _type: api_spec

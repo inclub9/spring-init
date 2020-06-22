@@ -12,16 +12,28 @@ type Address {
     other: String
 }
 
-# The Root Query for the application
+type Member {
+    id: ID!
+    nickName: String!
+    firstName: String!
+    lastName: String!
+    position: String!
+    leader: Member
+    team: Team!
+    address: Address!
+}
+
 type Query {
     allTeams: [Team]
     team(id: ID!): Team
 
     allAddresses: [Address]
     address(id: ID!): Address
+
+    allMembers: [Member]
+    member(id: ID!): Member
 }
 
-# The Root Mutation for the application
 type Mutation {
     createTeam(name: String): Team!
     deleteTeam(id: ID): [Team]
@@ -35,4 +47,15 @@ type Mutation {
         other: String,
     ): Address!
     updateAddressDistrict(id: ID, district: String): Int!
+
+    createMember(
+        id: ID!
+        nickName: String!
+        firstName: String!
+        lastName: String!
+        position: String!
+        leader: ID
+        team: ID!
+        address: ID!
+    ): Member!
 }
