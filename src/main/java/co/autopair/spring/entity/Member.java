@@ -31,17 +31,17 @@ public class Member {
     @NotNull
     private String position;
 
-    @OneToOne(cascade = CascadeType.REFRESH)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "leader_id", referencedColumnName = "id")
     private Member leader;
 
     @NotNull
-    @OneToOne(cascade = CascadeType.REFRESH)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "team_id", referencedColumnName = "id")
     private Team team;
 
     @NotNull
-    @OneToOne(cascade = CascadeType.REFRESH)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 }
