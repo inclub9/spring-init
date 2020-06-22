@@ -17,4 +17,13 @@ public class Mutation implements GraphQLMutationResolver {
                 Team.builder().name(name).build()
         );
     }
+
+    public Team updateName(String name) {
+        teamRepository.updateName(1, name);
+        return teamRepository.getOne(1);
+    }
+
+//    public void delete(Integer id) {
+//        teamRepository.deleteById(id);
+//    }
 }
