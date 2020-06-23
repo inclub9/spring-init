@@ -6,7 +6,6 @@ import co.autopair.spring.entity.Team;
 import co.autopair.spring.repository.AddressRepository;
 import co.autopair.spring.repository.MemberRepository;
 import co.autopair.spring.repository.TeamRepository;
-import co.autopair.spring.service.TeamService;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
