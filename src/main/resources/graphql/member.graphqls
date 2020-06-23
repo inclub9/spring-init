@@ -8,3 +8,37 @@ type Member {
     team: Team!
     address: Address!
 }
+
+extend type Query {
+    allMembers: [Member]
+    member(id: ID!): Member
+}
+
+input MemberInput{
+    id: ID!
+    nickName: String!
+    firstName: String!
+    lastName: String!
+    position: String!
+    leader: MemberInput
+    team: TeamInput!
+    address: AddressInput!
+}
+
+input AddressInput{
+    province: String!,
+    district: String!,
+    subDistrict: String!,
+    postalCode: String!,
+    other: String,
+}
+
+input TeamInput{
+    name: String!
+}
+
+extend type Mutation {
+    createMember(
+        member: MemberInput!
+    ): Member!
+}

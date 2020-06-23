@@ -2,3 +2,14 @@ type Team {
     id: ID!
     name: String!
 }
+
+type Query {
+    allTeams: [Team]
+    team(id: ID!): Team
+}
+
+type Mutation {
+    createTeam(name: String!): Team!
+    deleteTeam(id: ID!): [Team]
+    updateTeamName(id: ID!,name: String!): Int!
+}

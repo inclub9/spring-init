@@ -7,45 +7,12 @@ type Address {
     other: String
 }
 
-type Query {
-    allTeams: [Team]
-    team(id: ID!): Team
-
+extend type Query {
     allAddresses: [Address]
     address(id: ID!): Address
-
-    allMembers: [Member]
-    member(id: ID!): Member
 }
 
-input MemberInput{
-    id: ID!
-    nickName: String!
-    firstName: String!
-    lastName: String!
-    position: String!
-    leader: MemberInput
-    team: TeamInput!
-    address: AddressInput!
-}
-
-input AddressInput{
-    province: String!,
-    district: String!,
-    subDistrict: String!,
-    postalCode: String!,
-    other: String,
-}
-
-input TeamInput{
-    name: String!
-}
-
-type Mutation {
-    createTeam(name: String!): Team!
-    deleteTeam(id: ID!): [Team]
-    updateTeamName(id: ID!,name: String!): Int!
-
+extend type Mutation {
     createAddress(
         province: String!,
         district: String!,
@@ -54,8 +21,4 @@ type Mutation {
         other: String,
     ): Address!
     updateAddressDistrict(id: ID, district: String): Int!
-
-    createMember(
-        member: MemberInput!
-    ): Member!
 }
