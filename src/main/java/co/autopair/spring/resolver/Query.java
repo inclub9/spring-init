@@ -33,8 +33,8 @@ public class Query implements GraphQLQueryResolver {
         return teamRepository.findById(id).orElseThrow(() -> new RuntimeException("data not found"));
     }
 
-//    address
-    public List<Address> allAddresses(){
+    //    address
+    public List<Address> allAddresses() {
         return addressRepository.findAll();
     }
 
@@ -43,7 +43,7 @@ public class Query implements GraphQLQueryResolver {
     }
 
     //member
-    public List<Member> allMembers(){
+    public List<Member> allMembers() {
         return memberRepository.findAll();
     }
 
