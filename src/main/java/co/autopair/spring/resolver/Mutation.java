@@ -5,7 +5,9 @@ import co.autopair.spring.entity.Member;
 import co.autopair.spring.entity.Team;
 import co.autopair.spring.repository.AddressRepository;
 import co.autopair.spring.repository.MemberRepository;
-import co.autopair.spring.repository.TeamRepository;
+import co.autopair.spring.service.AddressService;
+import co.autopair.spring.service.MemberService;
+import co.autopair.spring.service.TeamService;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,28 +18,28 @@ import java.util.List;
 public class Mutation implements GraphQLMutationResolver {
 
     @Autowired
-    private TeamRepository teamRepository;
+    private TeamService teamService;
 
     @Autowired
-    private AddressRepository addressRepository;
+    private AddressService addressService;
 
     @Autowired
-    private MemberRepository memberRepository;
+    private MemberService memberService;
 
     //Team
     public Team createTeam(String name) {
-        return teamRepository.save(
+        return teamService.save(
                 Team.builder().name(name).build()
         );
     }
 
     public int updateTeamName(Integer id, String name) {
-        return teamRepository.updateName(id, name);
+        return teamService.updateName(id, name);
     }
 
     public List<Team> deleteTeam(Integer id) {
-        teamRepository.deleteById(id);
-        return teamRepository.findAll();
+        teamService.delete(id);
+        return teamService.findAll();
     }
 
     //Address
@@ -48,7 +50,7 @@ public class Mutation implements GraphQLMutationResolver {
             String postalCode,
             String other
     ) {
-        return addressRepository.save(
+        return addressService.save(
                 Address.builder()
                         .province(province)
                         .district(district)
@@ -60,19 +62,19 @@ public class Mutation implements GraphQLMutationResolver {
     }
 
     public int updateAddressDistrict(Integer id, String district) {
-        return addressRepository.updateDistrict(id, district);
+        return addressService.updateDistrict(id, district);
     }
 
     //member
     public Member createMember(
             Member member
     ) {
-        member.setTeam(teamRepository.save(member.getTeam()));
-        member.setAddress(addressRepository.save(member.getAddress()));
+        member.setTeam(teamService.save(member.getTeam()));
+        member.setAddress(addressService.save(member.getAddress()));
         if (member.getLeader() != null) {
-            member.setLeader(memberRepository.save(member.getLeader()));
+            member.setLeader(memberService.save(member.getLeader()));
         }
-        return memberRepository.save(
+        return memberService.save(
                 member
         );
     }

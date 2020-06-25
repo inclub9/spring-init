@@ -5,7 +5,9 @@ import co.autopair.spring.entity.Member;
 import co.autopair.spring.entity.Team;
 import co.autopair.spring.repository.AddressRepository;
 import co.autopair.spring.repository.MemberRepository;
-import co.autopair.spring.repository.TeamRepository;
+import co.autopair.spring.service.AddressService;
+import co.autopair.spring.service.MemberService;
+import co.autopair.spring.service.TeamService;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,38 +18,38 @@ import java.util.List;
 public class Query implements GraphQLQueryResolver {
 
     @Autowired
-    private TeamRepository teamRepository;
+    private TeamService teamService;
 
     @Autowired
-    private AddressRepository addressRepository;
+    private AddressService addressService;
 
     @Autowired
-    private MemberRepository memberRepository;
+    private MemberService memberService;
 
     //team
     public List<Team> allTeams() {
-        return teamRepository.findAll();
+        return teamService.findAll();
     }
 
     public Team team(Integer id) {
-        return teamRepository.findById(id).orElseThrow(() -> new RuntimeException("data not found"));
+        return teamService.find(id);
     }
 
     //    address
     public List<Address> allAddresses() {
-        return addressRepository.findAll();
+        return addressService.findAll();
     }
 
     public Address address(Integer id) {
-        return addressRepository.findById(id).orElseThrow(() -> new RuntimeException("data not found"));
+        return addressService.find(id);
     }
 
     //member
     public List<Member> allMembers() {
-        return memberRepository.findAll();
+        return memberService.findAll();
     }
 
     public Member member(Integer id) {
-        return memberRepository.findById(id).orElseThrow(() -> new RuntimeException("data not found"));
+        return memberService.find(id);
     }
 }
