@@ -52,7 +52,7 @@ public class Mutation implements GraphQLMutationResolver {
         return memberService.saveAll(memberList);
     }
 
-    public List<Member> removeMembersInTeam(List<Integer> memberIds) {
+    public List<Member> removeTeamOfMember(List<Integer> memberIds) {
         List<Member> memberList = new ArrayList<>();
         memberIds.stream().forEach(memberId -> {
             Member member = memberService.find(memberId);
@@ -62,6 +62,17 @@ public class Mutation implements GraphQLMutationResolver {
         return memberService.saveAll(memberList);
     }
 
+    public List<Member> removeMemberInTeam(Integer teamId, List<Integer> memberId) {
+        List<Member> memberList = memberService.findAllByTeamId(teamId);
+        List<Member> memberListToSave = new ArrayList<>();
+        memberList.stream().forEach(member -> {
+            member.setTeam(null);
+            memberListToSave.add(member);
+        });
+        memberService.saveAll(memberListToSave);
+        return memberService.findAll();
+    }
+
     public List<Member> updateTeamOfMember(List<Integer> memberId, List<Team> teams) {
         if (memberId.size() == teams.size()) {
             List<Team> teamList = teamService.findAllOrCreate(teams);
@@ -69,7 +80,7 @@ public class Mutation implements GraphQLMutationResolver {
             for (int i = 0; i < memberList.size(); i++) {
                 memberList.get(i).setTeam(teamList.get(i));
             }
-           return memberService.saveAll(memberList);
+            return memberService.saveAll(memberList);
         }
         return null;
     }

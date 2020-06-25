@@ -64,4 +64,8 @@ public class MemberService {
         });
         return memberList;
     }
+
+    public List<Member> findAllByTeamId(Integer teamId) {
+       return MemberRepository.findAllByTeam_id(teamId);
+    }
 }

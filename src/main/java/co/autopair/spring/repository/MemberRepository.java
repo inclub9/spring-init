@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -20,4 +21,6 @@ public interface MemberRepository extends CommonRepository<Member, Integer> {
     int updatePosition(@Param("id") long id, @Param("position") String position);
 
     Optional<Collection<Member>> findAllByAddress_District(String district);
+
+    List<Member> findAllByTeam_id(Integer teamId);
 }

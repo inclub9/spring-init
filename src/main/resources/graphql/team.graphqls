@@ -13,6 +13,7 @@ type Mutation {
     deleteTeam(id: ID!): [Team]
     updateTeamName(id: ID!,name: String!): Int!
     addMembersToTeam(teamId: ID!, members: [MemberInput]!): [Member]!
-    removeMembersInTeam(memberIds: [ID]!):[Member]!
+    removeTeamOfMember(memberIds: [ID]!):[Member]!
     updateTeamOfMember(memberId: [ID!]!, teams: [TeamInput!]!):[Member]!
+    removeMemberInTeam(teamId: ID!, memberId: [ID]!):[Member]!
 }
