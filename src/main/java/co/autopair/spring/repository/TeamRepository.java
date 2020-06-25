@@ -14,4 +14,6 @@ public interface TeamRepository extends CommonRepository<Team, Integer> {
     @Modifying
     @Query(value = "UPDATE teams SET name = :name WHERE id = :id", nativeQuery = true)
     int updateName(@Param("id") Integer id, @Param("name") String name);
+
+    Team findByName(String name);
 }

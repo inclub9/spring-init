@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2020-06-22T17:03:20.294Z
+__export_date: 2020-06-25T09:33:14.582Z
 __export_source: insomnia.desktop.app:v2020.2.2
 resources:
   - _id: req_2e239024fb074e269a3107160c062245
@@ -17,7 +17,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592364322035
     method: POST
-    modified: 1592811350601
+    modified: 1593061478823
     name: allTeams
     parameters: []
     parentId: fld_9ca6a5f5f842422283b4371c23a466f3
@@ -62,7 +62,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592364321985
     method: POST
-    modified: 1592811365196
+    modified: 1593063329792
     name: createTeam
     parameters: []
     parentId: fld_9ca6a5f5f842422283b4371c23a466f3
@@ -88,7 +88,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592364322010
     method: POST
-    modified: 1592811354614
+    modified: 1592913745400
     name: teamById
     parameters: []
     parentId: fld_9ca6a5f5f842422283b4371c23a466f3
@@ -114,7 +114,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592364321935
     method: POST
-    modified: 1592811369245
+    modified: 1592913749468
     name: updateName
     parameters: []
     parentId: fld_9ca6a5f5f842422283b4371c23a466f3
@@ -130,7 +130,7 @@ resources:
     authentication: {}
     body:
       mimeType: application/graphql
-      text: '{"query":"mutation {\n  deleteTeam(id: 13){\n    id\n    name\n  }\n}"}'
+      text: '{"query":"mutation {\n  deleteTeam(id: 312){\n    id\n    name\n  }\n}"}'
     created: 1592800918733
     description: ""
     headers:
@@ -140,8 +140,91 @@ resources:
     isPrivate: false
     metaSortKey: -1592364321885
     method: POST
-    modified: 1592811372929
+    modified: 1593060544245
     name: deleteTeam
+    parameters: []
+    parentId: fld_9ca6a5f5f842422283b4371c23a466f3
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: localhost:8080/autopair/graphql
+    _type: request
+  - _id: req_00488aa9905f42868431fb8e04ec75de
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation ($teamId: ID!, $members: [MemberInput]!)
+        {\n  addMembersToTeam(teamId: $teamId, members:
+        $members){\n    id\n    nickName\n  }\n}\n  ","variables":{"teamId":1,"members":[{"id":99,"nickName":"a","firstName":"a","lastName":"a","position":"a","team":{"name":"test"},"address":{"province":"aa","district":"aa","subDistrict":"aaaa","postalCode":"aaaa","other":"aaaa"}},{"id":98,"nickName":"s","firstName":"s","lastName":"s","position":"s","team":{"name":"test"},"address":{"province":"aa","district":"aa","subDistrict":"aaaa","postalCode":"aaaa","other":"aaaa"}}]}}'
+    created: 1593061492906
+    description: ""
+    headers:
+      - id: pair_75b044c551a64c89bf4868b314e365c6
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1592364321960
+    method: POST
+    modified: 1593068630948
+    name: addMembersToTeam
+    parameters: []
+    parentId: fld_9ca6a5f5f842422283b4371c23a466f3
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: localhost:8080/autopair/graphql
+    _type: request
+  - _id: req_a0f16f6aac9449c9aa914b5444770260
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation($memberIds: [ID]!){\n  removeMembersInTeam(memberIds:
+        $memberIds){\n    id\n    team{\n      name\n    }\n  }\n}","variables":{"memberIds":[1,2,3]}}'
+    created: 1593069095045
+    description: ""
+    headers:
+      - id: pair_75b044c551a64c89bf4868b314e365c6
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1592364321947.5
+    method: POST
+    modified: 1593077469335
+    name: removeMemberInTeam
+    parameters: []
+    parentId: fld_9ca6a5f5f842422283b4371c23a466f3
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: localhost:8080/autopair/graphql
+    _type: request
+  - _id: req_3463074ca41148b68a361ee9ad6d180c
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation($memberId: [ID!]!, $teams:
+        [TeamInput!]!){\n  updateTeamOfMember(memberId: $memberId, teams:
+        $teams){\n    id\n    team{\n      name\n    }\n  }\n}","variables":{"memberId":[1,2,3],"teams":[{"name":"wwww"},{"name":"dddd"},{"name":"qqqq"}]}}'
+    created: 1593070305709
+    description: ""
+    headers:
+      - id: pair_75b044c551a64c89bf4868b314e365c6
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1592364321941.25
+    method: POST
+    modified: 1593077573099
+    name: updateTeamOfMember
     parameters: []
     parentId: fld_9ca6a5f5f842422283b4371c23a466f3
     settingDisableRenderRequestBody: false
@@ -166,7 +249,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592801909319
     method: POST
-    modified: 1592811408682
+    modified: 1592913735716
     name: allAddresses
     parameters: []
     parentId: fld_e96f55a27bd7482a9cfad645d9c33689
@@ -202,7 +285,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592583115677
     method: POST
-    modified: 1592811412032
+    modified: 1592913737387
     name: addressById
     parameters: []
     parentId: fld_e96f55a27bd7482a9cfad645d9c33689
@@ -230,7 +313,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592473718856
     method: POST
-    modified: 1592806407453
+    modified: 1592913739181
     name: createAddress
     parameters: []
     parentId: fld_e96f55a27bd7482a9cfad645d9c33689
@@ -257,7 +340,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592419020445.5
     method: POST
-    modified: 1592806410477
+    modified: 1592913741202
     name: updateAddressDistrict
     parameters: []
     parentId: fld_e96f55a27bd7482a9cfad645d9c33689
@@ -283,7 +366,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592805371522
     method: POST
-    modified: 1592822906919
+    modified: 1593060730798
     name: allMembers
     parameters: []
     parentId: fld_cfd69bbf9faf40baac3b3b5039774c6c
@@ -319,7 +402,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592803640420.5
     method: POST
-    modified: 1592806397838
+    modified: 1593060669775
     name: member
     parameters: []
     parentId: fld_cfd69bbf9faf40baac3b3b5039774c6c
@@ -349,7 +432,7 @@ resources:
     isPrivate: false
     metaSortKey: -1592804505971.25
     method: POST
-    modified: 1592845142563
+    modified: 1593060670169
     name: createMembers
     parameters: []
     parentId: fld_cfd69bbf9faf40baac3b3b5039774c6c

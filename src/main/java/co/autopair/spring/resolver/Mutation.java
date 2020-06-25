@@ -53,7 +53,6 @@ public class Mutation implements GraphQLMutationResolver {
     }
 
     public List<Member> removeMembersInTeam(List<Integer> memberIds) {
-        System.out.println(memberIds);
         List<Member> memberList = new ArrayList<>();
         memberIds.stream().forEach(memberId -> {
             Member member = memberService.find(memberId);
@@ -62,6 +61,19 @@ public class Mutation implements GraphQLMutationResolver {
         });
         return memberService.saveAll(memberList);
     }
+
+    public List<Member> updateTeamOfMember(List<Integer> memberId, List<Team> teams) {
+        if (memberId.size() == teams.size()) {
+            List<Team> teamList = teamService.findAllOrCreate(teams);
+            List<Member> memberList = memberService.findAllById(memberId);
+            for (int i = 0; i < memberList.size(); i++) {
+                memberList.get(i).setTeam(teamList.get(i));
+            }
+           return memberService.saveAll(memberList);
+        }
+        return null;
+    }
+
 
     public int updateTeamName(Integer id, String name) {
         return teamService.updateName(id, name);

@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -49,5 +50,18 @@ public class MemberService {
 
     public List<Member> saveAll(List<Member> memberList) {
         return MemberRepository.saveAll(memberList);
+    }
+
+    public Member findById(Integer integer) {
+        return MemberRepository.findById(integer).orElseThrow(() -> new RuntimeException("data not found"));
+    }
+
+    public List<Member> findAllById(List<Integer> memberId) {
+        List<Member> memberList = new ArrayList<>();
+        memberId.stream().forEach(id -> {
+            Member member = findById(id);
+            memberList.add(member);
+        });
+        return memberList;
     }
 }

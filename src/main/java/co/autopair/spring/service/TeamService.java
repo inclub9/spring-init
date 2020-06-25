@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Value
@@ -41,4 +42,23 @@ public class TeamService {
         TeamRepository.deleteById(id);
     }
 
+    public Team findByName(String name) {
+        return TeamRepository.findByName(name);
+    }
+
+    public Team findOrCreate(String name) {
+        Team resultFindByName = findByName(name);
+        if (resultFindByName == null) {
+            return TeamRepository.save(Team.builder().name(name).build());
+        }
+        return resultFindByName;
+    }
+
+    public List<Team> findAllOrCreate(List<Team> teams) {
+        List<Team> teamList = new ArrayList<>();
+        teams.stream().forEach(team -> {
+            teamList.add(findOrCreate(team.getName()));
+        });
+        return teamList;
+    }
 }
