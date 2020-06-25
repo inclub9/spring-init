@@ -3,8 +3,6 @@ package co.autopair.spring.resolver;
 import co.autopair.spring.entity.Address;
 import co.autopair.spring.entity.Member;
 import co.autopair.spring.entity.Team;
-import co.autopair.spring.repository.AddressRepository;
-import co.autopair.spring.repository.MemberRepository;
 import co.autopair.spring.service.AddressService;
 import co.autopair.spring.service.MemberService;
 import co.autopair.spring.service.TeamService;
@@ -12,6 +10,7 @@ import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -31,6 +30,26 @@ public class Mutation implements GraphQLMutationResolver {
         return teamService.save(
                 Team.builder().name(name).build()
         );
+    }
+
+    public List<Member> addMembersToTeam(Long teamId, List<Member> members) {
+        List<Member> memberList = new ArrayList<>();
+        members.stream().forEach(member -> {
+            Member memberItem =
+                    member.builder()
+                            .id(member.getId())
+                            .nickName(member.getNickName())
+                            .firstName(member.getFirstName())
+                            .lastName(member.getLastName())
+                            .position(member.getPosition())
+                            .leader(member.getLeader())
+                            .team(teamService.save(member.getTeam()))
+                            .address(addressService.save(member.getAddress()))
+                            .build();
+            memberList.add(memberItem);
+
+        });
+        return memberService.saveAll(memberList);
     }
 
     public int updateTeamName(Integer id, String name) {

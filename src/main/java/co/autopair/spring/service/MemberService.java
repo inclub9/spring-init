@@ -46,4 +46,8 @@ public class MemberService {
     public Optional<Collection<Member>> findAllByAddressDistrict(String district) {
         return MemberRepository.findAllByAddress_District(district);
     }
+
+    public List<Member> saveAll(List<Member> memberList) {
+        return MemberRepository.saveAll(memberList);
+    }
 }

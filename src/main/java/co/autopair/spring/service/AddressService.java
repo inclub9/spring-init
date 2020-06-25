@@ -2,9 +2,7 @@ package co.autopair.spring.service;
 
 
 import co.autopair.spring.entity.Address;
-import co.autopair.spring.entity.Team;
 import co.autopair.spring.repository.AddressRepository;
-import co.autopair.spring.repository.TeamRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
 import org.springframework.stereotype.Service;

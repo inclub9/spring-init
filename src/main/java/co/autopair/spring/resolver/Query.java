@@ -3,8 +3,6 @@ package co.autopair.spring.resolver;
 import co.autopair.spring.entity.Address;
 import co.autopair.spring.entity.Member;
 import co.autopair.spring.entity.Team;
-import co.autopair.spring.repository.AddressRepository;
-import co.autopair.spring.repository.MemberRepository;
 import co.autopair.spring.service.AddressService;
 import co.autopair.spring.service.MemberService;
 import co.autopair.spring.service.TeamService;
