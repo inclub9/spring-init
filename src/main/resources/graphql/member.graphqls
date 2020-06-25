@@ -5,7 +5,7 @@ type Member {
     lastName: String!
     position: String!
     leader: Member
-    team: Team!
+    team: Team
     address: Address!
 }
 
@@ -21,7 +21,7 @@ input MemberInput{
     lastName: String!
     position: String!
     leader: MemberInput
-    team: TeamInput!
+    team: TeamInput
     address: AddressInput!
 }
 
