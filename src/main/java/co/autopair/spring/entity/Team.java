@@ -25,6 +25,6 @@ public class Team {
     @NotNull
     private String name;
 
-    @OneToMany(fetch = FetchType.EAGER)
-    private List<Member> members = new ArrayList<>();
+//    @OneToMany(fetch = FetchType.EAGER)
+//    private List<Member> members = new ArrayList<>();
 }
