@@ -27,9 +27,7 @@ public class Mutation implements GraphQLMutationResolver {
 
     //Team
     public Team createTeam(String name) {
-        return teamService.save(
-                Team.builder().name(name).build()
-        );
+        return teamService.findOrCreate(name);
     }
 
     public List<Member> addMembersToTeam(Long teamId, List<Member> members) {
