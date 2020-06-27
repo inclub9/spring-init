@@ -61,4 +61,12 @@ public class TeamService {
         });
         return teamList;
     }
+
+    public List<Team> findAllByName(List<String> teamName) {
+        List<Team> teamList = new ArrayList<>();
+        teamName.stream().forEach(name -> {
+            teamList.add(findByName(name));
+        });
+        return teamList;
+    }
 }

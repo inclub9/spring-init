@@ -7,6 +7,7 @@ import co.autopair.spring.service.AddressService;
 import co.autopair.spring.service.MemberService;
 import co.autopair.spring.service.TeamService;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@Log4j2
 public class Mutation implements GraphQLMutationResolver {
 
     @Autowired
@@ -90,6 +92,12 @@ public class Mutation implements GraphQLMutationResolver {
 
     public List<Team> deleteTeam(Integer id) {
         teamService.delete(id);
+        return teamService.findAll();
+    }
+
+    public List<Team> selectTeamAndFilterMember(List<String> teamName, List<String> memberName){
+        List<Team> teamList = teamService.findAllByName(teamName);
+        System.out.println(teamList);
         return teamService.findAll();
     }
 

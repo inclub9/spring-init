@@ -35,7 +35,7 @@ public class Member {
     @JoinColumn(name = "leader_id", referencedColumnName = "id")
     private Member leader;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "team_id", referencedColumnName = "id")
     private Team team;
 

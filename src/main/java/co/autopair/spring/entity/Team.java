@@ -3,11 +3,11 @@ package co.autopair.spring.entity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @SuperBuilder
 @Data
@@ -24,4 +24,7 @@ public class Team {
 
     @NotNull
     private String name;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<Member> members = new ArrayList<>();
 }
