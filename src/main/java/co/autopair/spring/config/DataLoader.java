@@ -6,6 +6,9 @@ import co.autopair.spring.entity.Team;
 import co.autopair.spring.repository.AddressRepository;
 import co.autopair.spring.repository.MemberRepository;
 import co.autopair.spring.repository.TeamRepository;
+import co.autopair.spring.service.AddressService;
+import co.autopair.spring.service.MemberService;
+import co.autopair.spring.service.TeamService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -25,11 +28,11 @@ import java.util.Random;
 @Slf4j
 public class DataLoader implements ApplicationRunner {
     @Autowired
-    TeamRepository teamRepository;
+    TeamService teamService;
     @Autowired
-    AddressRepository addressRepository;
+    AddressService addressService;
     @Autowired
-    MemberRepository memberRepository;
+    MemberService memberService;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -41,7 +44,7 @@ public class DataLoader implements ApplicationRunner {
 
     private void memberDataInitial(List<Address> addressList, List<Team> teamList) {
         Random rand = new Random();
-        memberRepository.saveAll(
+        memberService.saveAll(
                 Arrays.asList(
                         Member.builder().id(1).nickName("Honda").firstName("Honda")
                                 .lastName("Honda").team(teamList.get(0))
@@ -148,7 +151,7 @@ public class DataLoader implements ApplicationRunner {
 
     private List<Address> addressDataInitial() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        return addressRepository.saveAll(
+        return addressService.saveAll(
                 objectMapper.readValue(
                         new File("src/main/resources/database-data/address.json")
                         , new TypeReference<List<Address>>() {
@@ -158,7 +161,7 @@ public class DataLoader implements ApplicationRunner {
     }
 
     private List<Team> teamDataInitial() {
-        return teamRepository.saveAll(Arrays.asList(
+        return teamService.saveAll(Arrays.asList(
                 Team.builder().name("Chief").build(),
                 Team.builder().name("Operation").build(),
                 Team.builder().name("Admin").build(),

@@ -69,4 +69,8 @@ public class TeamService {
         });
         return teamList;
     }
+
+    public List<Team> saveAll(List<Team> asList) {
+        return TeamRepository.saveAll(asList);
+    }
 }

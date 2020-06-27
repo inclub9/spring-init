@@ -29,4 +29,8 @@ public class AddressService {
     public Address find(Integer id) {
         return addressRepository.findById(id).orElseThrow(() -> new RuntimeException("data not found"));
     }
+
+    public List<Address> saveAll(List<Address> readValue) {
+        return addressRepository.saveAll(readValue);
+    }
 }
