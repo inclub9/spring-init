@@ -5,9 +5,7 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @SuperBuilder
 @Data
@@ -24,8 +22,4 @@ public class Team {
 
     @NotNull
     private String name;
-//
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "id", referencedColumnName = "team_id")
-//    private Member member;
 }
