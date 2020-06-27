@@ -32,15 +32,12 @@ public class Member {
     private String position;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "leader_id", referencedColumnName = "id")
     private Member leader;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "team_id", referencedColumnName = "id")
     private Team team;
 
     @NotNull
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 }
