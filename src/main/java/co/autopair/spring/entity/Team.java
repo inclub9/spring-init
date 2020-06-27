@@ -24,7 +24,8 @@ public class Team {
 
     @NotNull
     private String name;
-
-//    @OneToMany(fetch = FetchType.EAGER)
-//    private List<Member> members = new ArrayList<>();
+//
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "id", referencedColumnName = "team_id")
+//    private Member member;
 }
