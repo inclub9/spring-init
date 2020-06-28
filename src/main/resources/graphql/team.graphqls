@@ -16,5 +16,4 @@ type Mutation {
     removeTeamOfMember(memberIds: [ID]!):[Member]!
     updateTeamOfMember(memberId: [ID!]!, teams: [TeamInput!]!):[Member]!
     removeMemberInTeam(teamId: ID!, memberId: [ID]!):[Member]!
-    selectTeamAndFilterMember(teamName: String!, memberName: String!):[Team]!
 }

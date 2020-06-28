@@ -95,11 +95,6 @@ public class Mutation implements GraphQLMutationResolver {
         return teamService.findAll();
     }
 
-    public List<Team> selectTeamAndFilterMember(String teamName, String memberName){
-
-        return teamService.findAll();
-    }
-
     //Address
     public Address createAddress(
             String province,
