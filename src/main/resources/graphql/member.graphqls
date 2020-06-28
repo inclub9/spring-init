@@ -41,4 +41,5 @@ extend type Mutation {
     createMember(
         member: MemberInput!
     ): Member!
+    filterMember(memberNames: String!):[Member]!
 }

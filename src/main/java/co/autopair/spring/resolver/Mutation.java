@@ -13,6 +13,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Component
 @Log4j2
@@ -130,5 +132,15 @@ public class Mutation implements GraphQLMutationResolver {
         return memberService.save(
                 member
         );
+    }
+
+    public List<Member> filterMember(String memberNames) {
+        List<Member> memberList = memberService.findAll();
+        List<Member> memberListEqualMemberName = memberListEqualMemberName = memberList
+                .stream()
+                .filter(member -> member.getFirstName().equals(memberNames))
+                .collect(Collectors.toList());
+        System.out.println(memberListEqualMemberName);
+        return memberListEqualMemberName;
     }
 }
